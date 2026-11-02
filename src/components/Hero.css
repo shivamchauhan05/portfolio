@@ -1,22 +1,13 @@
 .hero {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: 100px 20px 80px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  gap: 3rem;
+  padding: 60px 20px 80px;
   position: relative;
   overflow: hidden;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(58, 134, 255, 0.1) 0%, transparent 70%);
-}
 
 .hero-content {
   flex: 1;
@@ -24,11 +15,43 @@
   z-index: 1;
 }
 
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.hero-badge::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: var(--primary-color);
+}
+
+
 .hero-subtitle {
   font-size: 1.5rem;
   color: var(--primary-color);
-  font-weight: 600;
+  font-weight: 400;
+  font-family: var(--font-display);
+  font-style: italic;
   margin-bottom: 0.5rem;
+}
+
+.hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.hero-points span {
+  font-size: 0.92rem;
+  color: var(--text-light);
 }
 
 .hero-description {
@@ -38,10 +61,8 @@
 }
 
 .highlight {
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-color);
+  font-style: italic;
 }
 
 .hero-buttons {
@@ -52,6 +73,9 @@
 }
 
 .hero-image {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -61,13 +85,24 @@
 /* Profile Photo Styles */
 .profile-photo-container {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 380px;
+  aspect-ratio: 4 / 5;
+  padding: 10px;
+  background: #f8f4ea;
+  border: 1px solid var(--dark-color);
+  box-shadow: 12px 12px 0 rgba(26, 23, 20, 0.16);
+}
+
+.profile-photo-container::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  padding: 8px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  animation: float 3s ease-in-out infinite;
+  background: var(--primary-color);
+  z-index: -1;
 }
 
 @keyframes float {
@@ -78,20 +113,12 @@
 .profile-photo {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   object-fit: cover;
-  border: 4px solid white;
+  display: block;
 }
 
 .photo-frame {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  border: 2px solid var(--primary-color);
-  border-radius: 50%;
-  animation: rotate 10s linear infinite;
+  display: none;
 }
 
 @keyframes rotate {
@@ -152,7 +179,7 @@
 }
 
 .code-window {
-  background: var(--dark-color);
+  background: #0a0e14;
   border-radius: 15px;
   padding: 2rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -218,9 +245,10 @@
 }
 
 .stack-icons span {
-  background: var(--white);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   padding: 0.5rem 1rem;
-  border-radius: 25px;
+  border-radius: 2px;
   font-size: 0.9rem;
   font-weight: 500;
   box-shadow: var(--shadow);
@@ -239,17 +267,25 @@
     flex-direction: column;
     text-align: center;
     gap: 3rem;
+    padding-top: 40px;
   }
-  
+
   .hero-buttons {
     justify-content: center;
   }
-  
-  .profile-photo-container {
-    width: 280px;
-    height: 280px;
+
+  .stack-icons {
+    justify-content: center;
   }
-  
+
+  .hero-points {
+    justify-content: center;
+  }
+
+  .profile-photo-container {
+    width: 300px;
+  }
+
   .code-window {
     max-width: 300px;
   }
@@ -257,7 +293,13 @@
 
 @media (max-width: 480px) {
   .profile-photo-container {
-    width: 220px;
-    height: 220px;
+    width: 240px;
+  }
+
+  .profile-photo-container::before {
+    width: 120px;
+    height: 120px;
+    top: -30px;
+    right: -30px;
   }
 }

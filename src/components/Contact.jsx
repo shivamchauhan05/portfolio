@@ -65,20 +65,6 @@ ${formData.message}
     }, 1000);
   };
 
-  // Traditional email submission (optional)
-  const handleEmailSubmission = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate email submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      alert('Message sent successfully! I\'ll get back to you soon.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitting(false);
-    }, 2000);
-  };
-
   const contactInfo = [
     {
       icon: '📧',

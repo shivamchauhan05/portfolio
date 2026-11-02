@@ -13,10 +13,18 @@ const Skills = () => {
       description: 'Building dynamic UIs with hooks, context, and modern practices'
     },
     { 
+      name: 'Next.js', 
+      level: 82, 
+      category: 'frontend', 
+      color: '#1a1714',
+      icon: '▲',
+      description: 'Server-side rendering, routing, API routes and production Next.js apps'
+    },
+    { 
       name: 'JavaScript', 
       level: 88, 
       category: 'frontend', 
-      color: '#F7DF1E',
+      color: '#C9A400',
       icon: '🟨',
       description: 'ES6+, Async/Await, DOM manipulation, Modern JS features'
     },
@@ -121,6 +129,50 @@ const Skills = () => {
       color: '#007ACC',
       icon: '💻',
       description: 'Code editing, Debugging, Extensions ecosystem'
+    },
+
+    // Application Development
+    { 
+      name: 'Application Development', 
+      level: 85, 
+      category: 'apps', 
+      color: '#38BDF8',
+      icon: '📱',
+      description: 'Building web and mobile applications from idea to deployment'
+    },
+    { 
+      name: 'API Integration', 
+      level: 82, 
+      category: 'apps', 
+      color: '#22C55E',
+      icon: '🔌',
+      description: 'Connecting apps with third-party services and internal APIs'
+    },
+
+    // AI & Automation
+    { 
+      name: 'AI Automation', 
+      level: 82, 
+      category: 'ai', 
+      color: '#A855F7',
+      icon: '🤖',
+      description: 'Automating repetitive workflows with AI tools and APIs'
+    },
+    { 
+      name: 'Prompt Engineering', 
+      level: 80, 
+      category: 'ai', 
+      color: '#F472B6',
+      icon: '🧠',
+      description: 'Writing effective prompts for reliable AI-powered results'
+    },
+    { 
+      name: 'Workflow Automation', 
+      level: 78, 
+      category: 'ai', 
+      color: '#FACC15',
+      icon: '⚙️',
+      description: 'Connecting tools and services into automated workflows'
     }
   ];
 
@@ -128,7 +180,9 @@ const Skills = () => {
     frontend: 'Frontend Development',
     backend: 'Backend Development', 
     database: 'Database & Storage',
-    tools: 'Tools & Platforms'
+    tools: 'Tools & Platforms',
+    apps: 'Application Development',
+    ai: 'AI & Automation'
   };
 
   const getProficiency = (level) => {
@@ -138,9 +192,29 @@ const Skills = () => {
     return 'Beginner';
   };
 
+  const learning = [
+    { name: 'TypeScript', icon: '🔷', note: 'Strong typing for large React applications' },
+    { name: 'GraphQL', icon: '◈', note: 'Flexible APIs and efficient data fetching' },
+    { name: 'Docker', icon: '🐳', note: 'Containerizing and deploying applications' },
+    { name: 'AWS Basics', icon: '☁️', note: 'Hosting, storage and cloud fundamentals' }
+  ];
+
+  const workflow = [
+    { step: '01', title: 'Plan', text: 'Understand requirements and map out the architecture before writing code.' },
+    { step: '02', title: 'Design', text: 'Create clean, responsive layouts focused on usability and clarity.' },
+    { step: '03', title: 'Build', text: 'Develop scalable frontend and backend features with reusable components.' },
+    { step: '04', title: 'Ship', text: 'Test, optimize and deploy with performance and maintainability in mind.' }
+  ];
+
   return (
     <section id="skills" className="skills">
       <h2>Technical Skills</h2>
+      <p className="skills-intro">
+        I work across the full stack, from building responsive interfaces in
+        React to designing APIs and data models with Node.js, Express and
+        MongoDB. I also build applications and AI-powered automation workflows
+        that save time and reduce manual work.
+      </p>
       <div className="skills-categories">
         {Object.entries(categories).map(([key, title]) => (
           <div key={key} className="skill-category">
@@ -183,6 +257,36 @@ const Skills = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="skills-extra">
+        <div className="learning-section">
+          <h3>Currently Learning</h3>
+          <div className="learning-grid">
+            {learning.map((item) => (
+              <div key={item.name} className="learning-card">
+                <span className="learning-icon">{item.icon}</span>
+                <div>
+                  <h4>{item.name}</h4>
+                  <p>{item.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="workflow-section">
+          <h3>How I Work</h3>
+          <div className="workflow-grid">
+            {workflow.map((item) => (
+              <div key={item.step} className="workflow-card">
+                <span className="workflow-step">{item.step}</span>
+                <h4>{item.title}</h4>
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

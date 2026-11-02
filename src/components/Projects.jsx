@@ -5,56 +5,106 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce MERN Stack",
-      description: "Full-featured e-commerce platform with user authentication, product management, shopping cart, and payment integration",
-      technologies: ["React", "Node.js", "Express", "MongoDB", "JWT", "Stripe API"],
-      features: ["User Authentication", "Product Catalog", "Shopping Cart", "Order Management", "Admin Dashboard"],
-      github: "https://github.com/yourusername/ecommerce-mern",
-      live: "https://ecommerce-mern.netlify.app",
-      image: "🛒"
+      title: 'Company Vista Portal',
+      type: 'Company Project',
+      description: 'A client portal built at Company Vista Inc that brings business services, documents and account information into one secure dashboard.',
+      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'REST API'],
+      features: ['Secure Authentication', 'Business Dashboard', 'Document Management', 'Role-Based Access', 'Responsive UI'],
+      live: 'https://my.companyvista.com',
+      image: '🏢'
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates, team collaboration, and progress tracking",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Express", "JWT"],
-      features: ["Real-time Updates", "Team Collaboration", "Drag & Drop", "Progress Charts", "Notifications"],
-      github: "https://github.com/yourusername/task-manager",
-      live: "https://taskmanager-mern.netlify.app",
-      image: "✅"
+      title: 'Company Vista Partners Portal',
+      type: 'Company Project',
+      description: 'A partner-facing portal built with Next.js where partners can manage their accounts, track requests and access resources.',
+      technologies: ['Next.js', 'React', 'Node.js', 'REST API'],
+      features: ['Partner Onboarding', 'Role-Based Access', 'Partner Dashboard', 'Server-Side Rendering', 'SEO Friendly'],
+      live: 'https://partners.companyvista.com',
+      image: '🤝'
     },
     {
       id: 3,
-      title: "Social Media Platform",
-      description: "Social networking site with posts, comments, likes, user profiles, and real-time messaging",
-      technologies: ["React", "Node.js", "MongoDB", "Socket.io", "Cloudinary", "JWT"],
-      features: ["Create Posts", "Like/Comment", "User Profiles", "Real-time Chat", "Image Upload"],
-      github: "https://github.com/yourusername/social-media",
-      live: "https://social-app-mern.netlify.app",
-      image: "👥"
+      title: 'Company Vista Website',
+      type: 'Company Project',
+      description: 'The official corporate website for Company Vista Inc, designed to present the company services, process and contact options clearly.',
+      technologies: ['HTML5', 'CSS3', 'JavaScript'],
+      features: ['Corporate Landing Page', 'Service Sections', 'Responsive Layout', 'Contact Forms', 'Cross-Browser Support'],
+      live: 'https://companyvista.com',
+      image: '🌐'
     },
     {
       id: 4,
-      title: "Blog Application",
-      description: "Full-stack blog platform with rich text editor, categories, tags, and admin panel",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Quill.js", "JWT"],
-      features: ["Rich Text Editor", "Categories & Tags", "Search Functionality", "Admin Panel", "Comments System"],
-      github: "https://github.com/yourusername/blog-app",
-      live: "https://blog-app-mern.netlify.app",
-      image: "📝"
+      title: 'Start USA Company',
+      type: 'Company Project',
+      description: 'A business formation website that helps entrepreneurs start their company in the USA with clear service packages and guidance.',
+      technologies: ['HTML5', 'CSS3', 'JavaScript'],
+      features: ['Service Packages', 'Informative Sections', 'Responsive Design', 'Lead Generation', 'Clean Navigation'],
+      live: 'https://startusacompany.com',
+      image: '🇺🇸'
+    },
+    {
+      id: 5,
+      title: 'Company Vista Mobile App',
+      type: 'Company Project',
+      description: 'A companion mobile application for Company Vista Inc that connects users with the portal and keeps important information accessible on the go.',
+      technologies: ['Mobile App', 'REST API'],
+      features: ['Secure Login', 'Mobile Dashboard', 'API Integration', 'Responsive Screens', 'Cross-Platform'],
+      live: 'https://play.google.com/store/apps/details?id=com.vistaapp&hl=en_IN',
+      image: '📱'
+    },
+    {
+      id: 6,
+      title: 'ThinkYEdU',
+      type: 'Freelance Project',
+      description: 'A freelance website built for an education-focused brand, designed to present courses and services in a simple, engaging way.',
+      technologies: ['HTML5', 'CSS3', 'JavaScript'],
+      features: ['Course Sections', 'Responsive Layout', 'Modern UI', 'Contact Options', 'SEO Basics'],
+      live: 'https://thinkyedu.com',
+      image: '🎓'
+    },
+    {
+      id: 7,
+      title: 'MSGMIC',
+      type: 'Freelance Project',
+      description: 'A freelance business website built to showcase products and services with a clean, modern and mobile-friendly design.',
+      technologies: ['HTML5', 'CSS3', 'JavaScript'],
+      features: ['Product Showcase', 'Responsive Design', 'Modern Layout', 'Contact Forms', 'Fast Loading'],
+      live: 'https://msgmic.in',
+      image: '🎤'
+    },
+    {
+      id: 8,
+      title: 'LapTechPro',
+      type: 'Freelance Project',
+      description: 'A freelance website for a laptop and tech services business, focused on clear service information and easy enquiry options.',
+      technologies: ['HTML5', 'CSS3', 'JavaScript'],
+      features: ['Service Listings', 'Responsive Layout', 'Enquiry Options', 'Clean Navigation', 'Performance Focused'],
+      live: 'https://laptechpro.in',
+      image: '💻'
     }
   ];
 
   return (
     <section id="projects" className="projects">
-      <h2>MERN Stack Projects</h2>
+      <h2>Projects & Experience</h2>
+      <p className="projects-intro">
+        Real products I have built at Company Vista Inc, along with websites delivered
+        for freelance clients. Each project represents hands-on work with
+        design, development and deployment.
+      </p>
       <div className="projects-grid">
         {projects.map(project => (
           <div key={project.id} className="project-card">
-            <div className="project-icon">{project.image}</div>
+            <div className="project-top">
+              <div className="project-icon">{project.image}</div>
+              <span className={`project-type ${project.type === 'Freelance Project' ? 'freelance' : ''}`}>
+                {project.type}
+              </span>
+            </div>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            
+
             <div className="project-features">
               <h4>Key Features:</h4>
               <ul>
@@ -74,15 +124,24 @@ const Projects = () => {
             </div>
 
             <div className="project-links">
-              <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn github">
-                GitHub
-              </a>
-              <a href={project.live} target="_blank" rel="noopener noreferrer" className="btn live">
-                Live Demo
-              </a>
+              {project.live && (
+                <a href={project.live} target="_blank" rel="noopener noreferrer" className="btn live">
+                  Visit Website
+                </a>
+              )}
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="projects-cta">
+        <div>
+          <h3>Have an idea in mind?</h3>
+          <p>I am always open to building something new and challenging.</p>
+        </div>
+        <a href="mailto:chauhanshivam8836@gmail.com" className="btn primary">
+          Start a Conversation
+        </a>
       </div>
     </section>
   );

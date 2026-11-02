@@ -1,0 +1,121 @@
+.footer {
+  background: var(--bg-soft);
+  border-top: 3px double var(--dark-color);
+  padding: 4rem 20px 1.5rem;
+}
+
+.footer-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.3fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer-logo {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-family: var(--font-display);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+}
+
+.footer-brand p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  max-width: 340px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-socials a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 12px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.footer-socials a:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary-color);
+  background: rgba(192, 53, 59, 0.1);
+}
+
+.footer-column h4 {
+  color: var(--text-dark);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-column a,
+.footer-column li {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-column a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 3px double var(--dark-color);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding-top: 3rem;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
